@@ -27,6 +27,7 @@ pipeline {
             docker rm -f $(docker ps -aq)
           fi
           docker run -d --name monapp --hostname monapp -p 8099:80 myimage_nginx
+          docker exec -it -d monapp "ifconfig"
           '''
         }
       }
